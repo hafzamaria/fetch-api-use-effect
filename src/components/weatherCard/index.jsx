@@ -6,13 +6,14 @@ import moment from 'moment';
 let WeatherCard= ( { date,temp,min,max} ) => {
 
     return(
-
+    <div className='cardP'>
     <div className="card">
       
           <div>{moment(date).format('dddd ha')}</div>
            <h1>  {temp} °C</h1>
             <div>{min}°C - {max}°C</div>
 </div> 
+</div>
 //  <Card style={{ width: '18rem' }} 
 //  bg='danger'
 //  border='primary'>

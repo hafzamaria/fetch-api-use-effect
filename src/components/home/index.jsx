@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import WeatherCard from './../weatherCard'
 import { Button,Form } from 'react-bootstrap';
+import './index.css'
 
 
 let Home = () => {
@@ -23,12 +24,12 @@ let Home = () => {
   }
 
   return (
-    <div>
-      <h1>Weather App Home</h1>
-      <form onSubmit={submitHandler}>
+    <>
+      <h1 className="head1">Weather App Home</h1>
+      <form className="form" onSubmit={submitHandler}>
         
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>CityName:</Form.Label>
+        <Form.Label className="label"> CityName:</Form.Label>
         <Form.Control 
         type="text" 
         placeholder="Enter Your CityName"
@@ -67,6 +68,7 @@ let Home = () => {
         }  */}
         {
             data.map((eachForcast,index)=>(
+              <>
          <WeatherCard
           key={index}
           
@@ -75,11 +77,12 @@ let Home = () => {
           min={eachForcast.main.temp_min}
           max={eachForcast.main.temp_max}
           />
+          </>
          
             ))
         }
       
-    </div>
+    </>
   );
 };
 
